@@ -30,7 +30,7 @@ def get_args():
     parser.add_argument('-sd', '--scan-delay', help='Time delay before beginning new scan', required=False, type=int, default=1)
     parser.add_argument('-dc','--display-in-console',help='Display Found Pokemon in Console',action='store_true',default=False)
     parser.add_argument('-H', '--host', help='Set web server listening host', default='0.0.0.0')
-    parser.add_argument('-P', '--port', type=int, help='Set web server listening port', default=5000)
+    parser.add_argument('-P', '--port', type=int, help='Set web server listening port', default=8080)
     parser.add_argument('-L', '--locale', help='Locale for Pokemon names: default en, check'
                         'locale folder for more options', default='en')
     parser.add_argument('-c', '--china', help='Coordinates transformer for China', action='store_true')
