@@ -41,6 +41,8 @@ def get_args():
     parser.add_argument('-C', '--cors', help='Enable CORS on web server', action='store_true', default=False)
     parser.set_defaults(DEBUG=False)
 
+    args = parser.parse_args()
+
     if args.password is None:
         args.password = getpass.getpass()
 
