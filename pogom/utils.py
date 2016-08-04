@@ -35,9 +35,10 @@ def get_args():
     parser = configargparse.ArgParser(default_config_files=[configpath])
     parser.add_argument('-a', '--auth-service', type=str.lower,
                         help='Auth Service', default='ptc')
-    parser.add_argument('-u', '--username', help='Username')
-    parser.add_argument('-p', '--password', help='Password')
+    parser.add_argument('-u', '--username', help='Username',default=os.getenv('PGO_USERNAME', None))
+    parser.add_argument('-p', '--password', help='Password', default=os.getenv('PGO_PASSWORD', None))
     parser.add_argument('-l', '--location', type=parse_unicode,
+                        default=os.getenv('PGO_LOCATION', None),
                         help='Location, can be an address or coordinates')
     parser.add_argument('-st', '--step-limit', help='Steps', type=int,
                         default=12)
@@ -79,7 +80,7 @@ def get_args():
                         action='store_true', default=False)
     parser.add_argument('-k', '--gmaps-key',
                         help='Google Maps Javascript API Key',
-                        required=True)
+                        default=os.getenv('PGO_GMAPSKEY', None))
     parser.add_argument('-C', '--cors', help='Enable CORS on web server',
                         action='store_true', default=False)
     parser.add_argument('-D', '--db', help='Database filename',
