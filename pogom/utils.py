@@ -57,7 +57,7 @@ def get_args():
     parser.add_argument('-H', '--host', help='Set web server listening host',
                         default='127.0.0.1')
     parser.add_argument('-P', '--port', type=int,
-                        help='Set web server listening port', default=5000)
+                        help='Set web server listening port', default=8080)
     parser.add_argument('-L', '--locale',
                         help='Locale for Pokemon names (default: {},\
                         check {} for more)'.
